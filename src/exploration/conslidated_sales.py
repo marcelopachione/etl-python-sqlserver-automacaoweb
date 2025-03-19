@@ -39,6 +39,10 @@ dest_dir = (r'../datasets/excel/conslidated_sales')
 excel_file = 'tabajara_sales.xlsx'
 full_dest_path = os.path.join(dest_dir, excel_file)
 
+# Remove the file if it already exists
+if os.path.exists(full_dest_path):
+    os.remove(full_dest_path)
+
 conslidated_sales.to_excel(full_dest_path, index = False)
 
 #%% 
@@ -46,6 +50,10 @@ conslidated_sales.to_excel(full_dest_path, index = False)
 dest_dir = (r'../datasets/excel/conslidated_sales')
 csv_file = 'tabajara_sales.csv'
 full_dest_path = os.path.join(dest_dir, csv_file)
+
+# Remove the file if it already exists
+if os.path.exists(full_dest_path):
+    os.remove(full_dest_path)
 
 conslidated_sales.to_csv(full_dest_path, sep=',',  index = False)
 
@@ -55,9 +63,19 @@ dest_dir = (r'../datasets/excel/conslidated_sales')
 json_file = 'tabajara_sales.json'
 full_dest_path = os.path.join(dest_dir, json_file)
 
+# Remove the file if it already exists
+if os.path.exists(full_dest_path):
+    os.remove(full_dest_path)
+
 conslidated_sales.to_json(full_dest_path, orient = 'records', indent=4)
 
 
+
+
+
+##############################################################################
+### Testes Minio / boto3
+##############################################################################
 #%%
 ########################################################
 # Save the consolidated data to datalake - excel
