@@ -176,5 +176,5 @@ pyrightconfig.json
 # End of https://www.toptal.com/developers/gitignore/api/python
 
 # sqlserver
-./sqlserver/
-./minio/minio/.minio.sys
+docker/sqlserver/
+docker/minio/minio_data
