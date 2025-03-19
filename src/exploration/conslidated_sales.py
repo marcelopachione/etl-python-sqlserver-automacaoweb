@@ -58,10 +58,6 @@ full_dest_path = os.path.join(dest_dir, json_file)
 conslidated_sales.to_json(full_dest_path, orient = 'records', indent=4)
 
 
-
-
-
-
 #%%
 ########################################################
 # Save the consolidated data to datalake - excel
