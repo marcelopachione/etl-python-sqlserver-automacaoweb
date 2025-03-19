@@ -175,5 +175,5 @@ cython_debug/
 
 # VSCODE
 .vscode
-docker/minio/minio_data/.minio.sys
+docker/minio/minio_data
 docker/sqlserver/
