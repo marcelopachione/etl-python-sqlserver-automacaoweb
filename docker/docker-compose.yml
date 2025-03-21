@@ -2,7 +2,7 @@ name: etl-sqlserver
 
 services:
   mssql-etl-sqlserver:
-    image: mcr.microsoft.com/mssql/server:2022-latest
+    image: mcr.microsoft.com/mssql/server:2019-latest
     container_name: mssql-db-etl-sqlserver
     hostname: mssql-db
     restart: no
@@ -62,3 +62,45 @@ services:
       mc mb myminio/raw;
       mc ls myminio;
       "
+#   postgres-etl-sqlserver:
+#     container_name: postgres-etl-sqlserver
+#     image: postgres:latest
+#     hostname: postgres
+#     environment:
+#       POSTGRES_USER: postgres
+#       POSTGRES_PASSWORD: postgres
+#       POSTGRES_DB: postgres
+#     ports:
+#       - '5432:5432'
+#     volumes:
+#       - postgresql_bin:/usr/lib/postgresql
+#       - postgresql_datafiles:/var/lib/postgresql/data
+#       - ./files:/files
+#       - ./stage:/stage
+
+#   pgadmin-etl-sqlserver:
+#     container_name: pgadmin-etl-sqlserver
+#     image: dpage/pgadmin4
+#     environment:
+#       PGADMIN_DEFAULT_EMAIL: pgadmin@pgadmin.com
+#       PGADMIN_DEFAULT_PASSWORD: postgres
+#       PGADMIN_LISTEN_PORT: 5050
+#       PGADMIN_CONFIG_SERVER_MODE: 'False'
+#     ports:
+#       - 5050:5050
+#     volumes:
+#       - postgresql_bin:/usr/lib/postgresql
+#       - pgadmin_root_prefs:/root/.pgadmin
+#       - pgadmin_working_dir:/var/lib/pgadmin
+#       - ./files:/files
+#       - ./stage:/stage
+
+# volumes:
+#   pgadmin_root_prefs:
+#     driver: local
+#   pgadmin_working_dir:
+#     driver: local
+#   postgresql_datafiles:
+#     driver: local
+#   postgresql_bin:
+#     driver: local

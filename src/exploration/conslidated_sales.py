@@ -127,3 +127,4 @@ s3 = boto3.client('s3',
 res = s3.list_objects(Bucket='raw')
 for obj in res.get('Contents', []):
     print(obj['Key'])
+# %%
